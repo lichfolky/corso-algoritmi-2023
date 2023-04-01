@@ -9,3 +9,12 @@
 
 
 ## Risorse
+
+
+
+
+## Altro
+
+[Formule matematiche su markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)  
+[Simboli matematici e lettere greche](
+https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols)
