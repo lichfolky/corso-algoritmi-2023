@@ -31,3 +31,16 @@ week 4
 
 
 https://it.wikipedia.org/wiki/Quicksort
+
+
+#### Roba altro
+
+```mermaid
+graph TD;
+    A --> B;
+    A --> C;
+    B --> D;
+    C --> D;
+```
+
+riprendere es java vecchi
