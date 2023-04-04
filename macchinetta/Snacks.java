@@ -1,12 +1,14 @@
 package macchinetta;
 
 import ricerca.*;
+
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class Snacks {
 
     public static void main(String[] args) {
+
         Prodotto[] prodotti = new Prodotto[7];
         prodotti[0] = new Prodotto("Panino", 5.50);
         prodotti[1] = new Prodotto("Panino Vegano", 4.00);
@@ -23,6 +25,7 @@ public class Snacks {
         for (Prodotto prodotto : prodotti) {
             System.out.println(prodotto.nome + " " + df.format(prodotto.prezzo) + "€");            
         }
+
         System.out.println(" ");
 
         Scanner scanner = new Scanner(System.in);
@@ -44,7 +47,7 @@ public class Snacks {
         
         System.out.println(" ");
         System.out.println("Costo totale: " + costoTotale +"€");
-        System.out.println("Grazie mille e buona giornata!");
+        System.out.println("Grazie mille e buona giornata!!!");
         scanner.close();       
     }
 

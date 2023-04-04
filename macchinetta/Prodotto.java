@@ -8,6 +8,5 @@ public class Prodotto {
         this.nome = nome;
         this.prezzo = prezzo;
     }
-
     
 }
