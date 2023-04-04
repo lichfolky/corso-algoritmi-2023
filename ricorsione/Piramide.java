@@ -45,7 +45,10 @@ public class Piramide {
 
 
     public static void stampaPiramideRicorsivo( int n ){ // 7 6 ... 
+
+        // assicurati sempre che ci sia una condizione di terminazione
         if(n > 0){
+
             stampaPiramideRicorsivo(n - 1); // 6 5
 
             for (int j = 0; j < n; j++) {
