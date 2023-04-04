@@ -8,7 +8,7 @@ In caso di necessità potete contattarmi qui: [mattia.folcarelli@gmail.com](mail
 ## Appunti e argomenti delle lezioni  
 
 - 2023-04-03 - **[Introduzione](2023-04-03.md)**
-- 2023-04-04 - **[Ricorsione, stack e ordinamento](2023-04-03.md)**
+- 2023-04-04 - **[Ricorsione, stack e ordinamento](2023-04-04.md)**
 
 ## Risorse
 
