@@ -12,22 +12,19 @@ In caso di necessità potete contattarmi qui: [mattia.folcarelli@gmail.com](mail
 
 ## Studenti
 
-Eugenio Aloi - https://github.com/eugenioaloi
-Enrico Aimo	- https://github.com/EnricoAimo
 Antonio Fiumanò - https://github.com/TonyFiuma
 Bodasca Luca - https://github.com/bodascaluca
-Gabriele Sucato - https://github.com/Gabriele-Sucato
-Roberto Blasi - https://github.com/robbbb999
+Chiara Zaccone - https://github.com/ChiaraZaccone
+Elisabetta Penna - https://github.com/ElisabettaPenna
+Enrico Aimo - https://github.com/EnricoAimo
+Eugenio Aloi - https://github.com/eugenioaloi
 Facundo Acosta - https://github.com/FacuNor
+Gabriele Sucato - https://github.com/Gabriele-Sucato
+Josue Manuel Condori Quisbert - https://github.com/JCondoriGithub
+Roberto Blasi - https://github.com/robbbb999
+Samuele Richetto - https://github.com/samuNeo23
 Simone Di Carlo - https://github.com/s-dc
 Zaccone Chiara - https://github.com/ChiaraZaccone
-Josue Manuel Condori Quisbert - https://github.com/JCondoriGithub
-Simone di Carlo - https://github.com/s-dc
-Elisabetta Penna - https://github.com/ElisabettaPenna
-Samuele Richetto - https://github.com/samuNeo23
-Gabriele Sucato - https://github.com/Gabriele-Sucato
-Chiara Zaccone - https://github.com/ChiaraZaccone
-
 
 ## Risorse
 

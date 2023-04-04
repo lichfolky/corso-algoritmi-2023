@@ -1,5 +1,7 @@
 package mystack;
 
+import java.util.EmptyStackException;
+
 public class MyStack {
 
     int[] stack;
@@ -21,7 +23,7 @@ public class MyStack {
     // restituisce l'ultimo elemento inserrito nello stack, rimuovendolo
     public int pop() throws Exception {
         if (nextElementIndex == 0) {
-            throw new Exception("Lo stack è vuoto");
+            throw new EmptyStackException();
         }
         int aux = this.stack[nextElementIndex - 1];
         this.stack[nextElementIndex - 1] = 0;
@@ -32,7 +34,7 @@ public class MyStack {
     // restituisce l'ultimo elemento inserrito nello stack
     public int top() throws Exception {
         if (nextElementIndex == 0) {
-            throw new Exception("Lo stack è vuoto");
+            throw new EmptyStackException();
         }
         return this.stack[nextElementIndex - 1];
     }

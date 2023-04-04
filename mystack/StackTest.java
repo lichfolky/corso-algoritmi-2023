@@ -1,19 +1,20 @@
 package mystack;
+import java.util.Stack;
 
-public class MyStackTest {
+public class StackTest {
 
     public static void main(String[] args) {
-        MyStack stack = new MyStack(4);
+        Stack<Integer> stack = new Stack<Integer>();
         System.out.println(stack);
         try{
             stack.push(1);        
-            System.out.println("Push ha inserito l'elemento: " + stack.top());
+            System.out.println("Push ha inserito l'elemento: " + stack.peek());
             System.out.println(stack);
             stack.push(2);
-            System.out.println("Push ha inserito l'elemento: " + stack.top());
+            System.out.println("Push ha inserito l'elemento: " + stack.peek());
             System.out.println(stack);
             stack.push(3);
-            System.out.println("Push ha inserito l'elemento: " + stack.top());
+            System.out.println("Push ha inserito l'elemento: " + stack.peek());
             System.out.println(stack);
         }catch(Exception e){
             System.out.println("errore");
@@ -40,7 +41,6 @@ public class MyStackTest {
             System.out.println(e.getMessage());
         }
         System.out.println(stack.isEmpty());
-     
     }
     
 }
