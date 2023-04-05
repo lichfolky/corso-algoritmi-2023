@@ -1,8 +1,9 @@
 package ricerca;
+
 import macchinetta.Prodotto;
 
 public class Ricerca {
- 
+
     // O(n) Omega(1)
     public static boolean ricercaLineare(int[] array, int elementoDaTrovare) {
         for (int i = 0; i < array.length; i++) {
@@ -23,7 +24,7 @@ public class Ricerca {
         while (primo != ultimo) {
             centro = (primo + ultimo) / 2;
             System.out.println("[" + primo + ", " + centro + ", " + ultimo + "]");
-            
+
             if (array[centro] == elementoDaTrovare) {
                 return true;
             } else {
@@ -52,14 +53,35 @@ public class Ricerca {
         return massimo;
     }
 
-
     public static int ricercaLineareProdotti(Prodotto[] array, String nome) {
         for (int i = 0; i < array.length; i++) {
-            if(array[i].nome.equals(nome)){
+            if (array[i].nome.equals(nome)) {
                 return i;
             }
         }
         return -1;
+    }
+
+    public static boolean ricercaBinariaRicorsiva(int[] array, int elementoDaTrovare) {
+        return ricercaBinariaStepRicorsivo(array, 0, array.length - 1, elementoDaTrovare);
+    }
+
+    private static boolean ricercaBinariaStepRicorsivo(int[] array, int inizio, int fine, int elementoDaTrovare) {
+        if (inizio == fine) {
+            return array[inizio] == elementoDaTrovare;
+        }
+
+        int centro = (inizio + fine) / 2;
+
+        if (array[centro] == elementoDaTrovare) {
+            return true;
+        } else {
+            if (array[centro] < elementoDaTrovare) {
+                return ricercaBinariaStepRicorsivo(array, centro + 1, fine, elementoDaTrovare);
+            } else {
+                return ricercaBinariaStepRicorsivo(array, inizio, centro - 1, elementoDaTrovare);
+            }
+        }
     }
 
 }
