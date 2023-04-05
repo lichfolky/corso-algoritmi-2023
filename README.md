@@ -9,38 +9,23 @@ In caso di necessità potete contattarmi qui: [mattia.folcarelli@gmail.com](mail
 
 - 2023-04-03 - **[Introduzione](2023-04-03.md)**
 - 2023-04-04 - **[Ricorsione, stack e ordinamento](2023-04-04.md)**
+- 2023-04-04 - **[Ordinamenti e intro divide et impera](2023-04-05.md)**
 
 ## Studenti
 
-Antonio Fiumanò - https://github.com/TonyFiuma
-Bodasca Luca - https://github.com/bodascaluca
-Chiara Zaccone - https://github.com/ChiaraZaccone
-Elisabetta Penna - https://github.com/ElisabettaPenna
-Enrico Aimo - https://github.com/EnricoAimo
-Eugenio Aloi - https://github.com/eugenioaloi
-Facundo Acosta - https://github.com/FacuNor
-Gabriele Sucato - https://github.com/Gabriele-Sucato
-Josue Manuel Condori Quisbert - https://github.com/JCondoriGithub
-Roberto Blasi - https://github.com/robbbb999
-Samuele Richetto - https://github.com/samuNeo23
-Simone Di Carlo - https://github.com/s-dc
-Zaccone Chiara - https://github.com/ChiaraZaccone
-
-## Studenti
-
-Antonio Fiumanò - https://github.com/TonyFiuma
-Bodasca Luca - https://github.com/bodascaluca
-Chiara Zaccone - https://github.com/ChiaraZaccone
-Elisabetta Penna - https://github.com/ElisabettaPenna
-Enrico Aimo - https://github.com/EnricoAimo
-Eugenio Aloi - https://github.com/eugenioaloi
-Facundo Acosta - https://github.com/FacuNor
-Gabriele Sucato - https://github.com/Gabriele-Sucato
-Josue Manuel Condori Quisbert - https://github.com/JCondoriGithub
-Roberto Blasi - https://github.com/robbbb999
-Samuele Richetto - https://github.com/samuNeo23
-Simone Di Carlo - https://github.com/s-dc
-Zaccone Chiara - https://github.com/ChiaraZaccone
+Antonio Fiumanò - https://github.com/TonyFiuma  
+Bodasca Luca - https://github.com/bodascaluca  
+Chiara Zaccone - https://github.com/ChiaraZaccone  
+Elisabetta Penna - https://github.com/ElisabettaPenna  
+Enrico Aimo - https://github.com/EnricoAimo  
+Eugenio Aloi - https://github.com/eugenioaloi  
+Facundo Acosta - https://github.com/FacuNor  
+Gabriele Sucato - https://github.com/Gabriele-Sucato  
+Josue Manuel Condori Quisbert - https://github.com/JCondoriGithub  
+Roberto Blasi - https://github.com/robbbb999  
+Samuele Richetto - https://github.com/samuNeo23  
+Simone Di Carlo - https://github.com/s-dc  
+Zaccone Chiara - https://github.com/ChiaraZaccone  
 
 ## Risorse
 
