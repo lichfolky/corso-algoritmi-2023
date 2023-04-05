@@ -204,6 +204,49 @@ public class Sort {
             }
         }
         return ordinato;
-
     }
+
+    public static void quickSort(String[] array) {
+        quickSortStep(array, 0, array.length - 1);
+    }
+
+    private static void quickSortStep(String[] array, int minimo, int massimo) {
+        if (minimo >= massimo || minimo < 0) {
+            return;
+        }
+        int pivotIndex = partizione(array, minimo, massimo);
+
+        System.out.println(String.join(" ", array));
+
+        quickSortStep(array, minimo, pivotIndex - 1);
+        quickSortStep(array, pivotIndex + 1, massimo);
+        // non c'è bisogno di fare merge
+    }
+
+    private static int partizione(String[] array, int minimo, int massimo) {
+        String pivot = array[minimo];
+        int inf = minimo;
+        int sup = massimo + 1;
+
+        while (true) {
+            // a[minimo ... inf-1] <= pivot
+            // a[sup+1 ... massimo] > pivot
+            do {
+                inf++;
+            } while (array[inf].compareTo(pivot) <= 0);
+            do {
+                sup--;
+            } while (array[sup].compareTo(pivot) > 0);
+            if (inf < sup) {
+                scambia(array, inf, sup);
+            } else {
+                break;
+            }
+        }
+
+        System.out.println("minimo sup" + minimo + " " + sup);
+        scambia(array, minimo, sup);
+        return sup;
+    }
+
 }
