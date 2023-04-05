@@ -4,7 +4,6 @@ Qui sono presenti appunti, argomenti ed esercizi del corso di **algoritmi 2023**
 
 In caso di necessità potete contattarmi qui: [mattia.folcarelli@gmail.com](mailto:mattia.folcarelli@gmail.com)
 
-
 ## Appunti e argomenti delle lezioni  
 
 - 2023-04-03 - **[Introduzione](2023-04-03.md)**
