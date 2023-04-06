@@ -1,17 +1,18 @@
 package ordinamento;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import macchinetta.Prodotto;
 
-public class Sort {
+public class Sort<T extends Comparable<T>> {
     /*
      * Per ogni elemento dell'array i
      * trova il minimo nei successivi i + 1 elementi
      * scambia il minimo trovato con l'elemento i
      * Questo algoritmo ha complessità O(x^2)
      */
-    public static void selectionSort(String[] array) {
+    public void selectionSort(T[] array) {
         for (int i = 0; i < array.length; i++) {
             int minimo = i;
             for (int j = i + 1; j < array.length; j++) {
@@ -20,13 +21,13 @@ public class Sort {
                 }
             }
 
-            String aux = array[i];
+            T aux = array[i];
             array[i] = array[minimo];
             array[minimo] = aux;
         }
     }
 
-    public static void mergeSort(String[] array, int inizio, int fine) {
+    public void mergeSort(T[] array, int inizio, int fine) {
         if (inizio < fine) {
             int centro = (inizio + fine) / 2;
             mergeSort(array, inizio, centro);
@@ -36,9 +37,9 @@ public class Sort {
     }
 
     // fonde due sezioni dell'array ordinate, in un'unica sezione ordinata
-    public static void merge(String[] array, int inizio, int centro, int fine) {
+    public void merge(T[] array, int inizio, int centro, int fine) {
         // array di lavoro
-        String[] aux = new String[fine - inizio + 1];
+        ArrayList<T> aux = new ArrayList<T>(fine - inizio + 1);
 
         // contatore inizio prima parte
         int i = inizio;
@@ -54,30 +55,31 @@ public class Sort {
             // se elemento i della 1a parte è minore elemento j della 2a parte
             if (array[i].compareTo(array[j]) <= 0) {
                 // salvo in aux l'elemento della 1a parte
-                aux[k] = array[i];
+
+                aux.set(k, array[i]);
                 i++;
             } else {
                 // salvo in aux l'elemento della 2a parte
-                aux[k] = array[j];
+                aux.set(k, array[j]);
                 j++;
             }
             k++;
         }
 
         while (i <= centro) {
-            aux[k] = array[i];
+            aux.set(k, array[i]);
             i++;
             k++;
         }
 
         while (j <= fine) {
-            aux[k] = array[j];
+            aux.set(k, array[j]);
             j++;
             k++;
         }
 
         for (int p = inizio; p <= fine; p++) {
-            array[p] = aux[p - inizio];
+            array[p] = aux.get(p - inizio);
         }
 
     }
@@ -88,7 +90,7 @@ public class Sort {
      * array[2])
      * se il primo è maggiore del secondo scambiali
      */
-    public static void bubbleSort(String[] array) {
+    public void bubbleSort(T[] array) {
         boolean scambi = true;
         while (scambi) {
             scambi = false;
@@ -101,24 +103,26 @@ public class Sort {
         }
     }
 
-    private static void scambia(Object[] array, int i, int j) {
-        Object aux = array[i];
+    private void scambia(T[] array, int i, int j) {
+        T aux = array[i];
         array[i] = array[j];
         array[j] = aux;
     }
 
-    public static void bubbleSort(Prodotto[] array) {
-        boolean scambi = true;
-        while (scambi) {
-            scambi = false;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i].compareTo(array[i + 1]) > 0) {
-                    scambia(array, i, i + 1);
-                    scambi = true;
-                }
-            }
-        }
-    }
+    /*
+     * public void bubbleSort(Prodotto[] array) {
+     * boolean scambi = true;
+     * while (scambi) {
+     * scambi = false;
+     * for (int i = 0; i < array.length - 1; i++) {
+     * if (array[i].compareTo(array[i + 1]) > 0) {
+     * scambia(array, i, i + 1);
+     * scambi = true;
+     * }
+     * }
+     * }
+     * }
+     */
 
     /**
      * per ogni elemento i (escluso il primo)
@@ -128,10 +132,10 @@ public class Sort {
      * 
      * @param array
      */
-    public static void insertionSort(String[] array) {
+    public void insertionSort(T[] array) {
         // i primi i elementi sono ordinati
         for (int i = 1; i < array.length; i++) {
-            String aux = array[i];
+            T aux = array[i];
 
             // trova l'elemento array[k] >= array[i] (cosa cambia l'=?)
             // System.out.print(array[i] + ": ");
@@ -144,20 +148,20 @@ public class Sort {
                 }
             }
 
-            // System.out.println(Arrays.toString(array));
+            // System.out.println(Arrays.toT(array));
             // System.out.println("shifto " + k + ": ");
 
             // shifto tutto gli elementi ordinati rimanenti a dx
             for (int j = i - 1; j >= k; j--) {
                 array[j + 1] = array[j];
             }
-            // System.out.println(Arrays.toString(array));
+            // System.out.println(Arrays.toT(array));
 
             array[k] = aux;
         }
     }
 
-    public static void insertionSort(Prodotto[] array) {
+    public void insertionSort(Prodotto[] array) {
         // i primi i elementi sono ordinati
         for (int i = 1; i < array.length; i++) {
             Prodotto aux = array[i];
@@ -175,7 +179,7 @@ public class Sort {
         }
     }
 
-    public static void miracleSort(String[] array) {
+    public void miracleSort(T[] array) {
 
         throw new UnsupportedOperationException();
         /*
@@ -186,7 +190,7 @@ public class Sort {
          */
     }
 
-    public static void bozoSort(String[] array) {
+    public void bozoSort(T[] array) {
         Random rng = new Random();
         while (!isOrdinato(array)) {
             int primo = rng.nextInt(array.length);
@@ -195,7 +199,7 @@ public class Sort {
         }
     }
 
-    public static boolean isOrdinato(String[] array) {
+    public boolean isOrdinato(T[] array) {
         boolean ordinato = true;
 
         for (int i = 0; i < array.length - 1; i++) {
@@ -206,25 +210,22 @@ public class Sort {
         return ordinato;
     }
 
-    public static void quickSort(String[] array) {
+    public void quickSort(T[] array) {
         quickSortStep(array, 0, array.length - 1);
     }
 
-    private static void quickSortStep(String[] array, int minimo, int massimo) {
+    private void quickSortStep(T[] array, int minimo, int massimo) {
         if (minimo >= massimo || minimo < 0) {
             return;
         }
         int pivotIndex = partizione(array, minimo, massimo);
-
-        System.out.println(String.join(" ", array));
-
         quickSortStep(array, minimo, pivotIndex - 1);
         quickSortStep(array, pivotIndex + 1, massimo);
         // non c'è bisogno di fare merge
     }
 
-    private static int partizione(String[] array, int minimo, int massimo) {
-        String pivot = array[minimo];
+    private int partizione(T[] array, int minimo, int massimo) {
+        T pivot = array[minimo];
         int inf = minimo;
         int sup = massimo + 1;
 

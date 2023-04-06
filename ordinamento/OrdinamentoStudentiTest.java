@@ -3,6 +3,8 @@ package ordinamento;
 public class OrdinamentoStudentiTest {
 
     public static void main(String[] args) {
+
+        Sort<String> sorter = new Sort<String>();
         String[] studenti = {
 
                 "Eugenio",
@@ -20,10 +22,10 @@ public class OrdinamentoStudentiTest {
                 "Chiara"
         };
 
-        Sort.quickSort(studenti);
+        sorter.quickSort(studenti);
         System.out.println("Studenti:\n\n" + String.join("\n", studenti));
 
-        System.out.println("È ordinato: " + Sort.isOrdinato(studenti));
+        System.out.println("È ordinato: " + sorter.isOrdinato(studenti));
         // Arrays.sort(studenti);
         // Sort.selectionSort(studenti);
 

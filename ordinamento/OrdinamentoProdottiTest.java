@@ -7,6 +7,8 @@ import macchinetta.Prodotto;
 public class OrdinamentoProdottiTest {
 
     public static void main(String[] args) {
+
+        Sort<Prodotto> sorter = new Sort<Prodotto>();
         Prodotto[] prodotti = new Prodotto[11];
         prodotti[0] = new Prodotto("Panino", 5.50);
         prodotti[1] = new Prodotto("Panino Vegano", 4.00);
@@ -20,7 +22,7 @@ public class OrdinamentoProdottiTest {
         prodotti[9] = new Prodotto("Acqua", 9.00);
         prodotti[10] = new Prodotto("Acqua", 10.00);
 
-        Arrays.sort(prodotti);
+        sorter.bubbleSort(prodotti);
         // Sort.selectionSort(prodotti);
         // Sort.insertionSort(prodotti);
         // Sort.bubbleSort(prodotti);

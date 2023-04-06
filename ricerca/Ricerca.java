@@ -1,11 +1,9 @@
 package ricerca;
 
-import macchinetta.Prodotto;
-
-public class Ricerca {
+public class Ricerca<T extends Comparable<T>> {
 
     // O(n) Omega(1)
-    public static boolean ricercaLineare(int[] array, int elementoDaTrovare) {
+    public boolean ricercaLineare(T[] array, T elementoDaTrovare) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == elementoDaTrovare) { // 1
                 return true;
@@ -15,7 +13,7 @@ public class Ricerca {
     }
 
     // O(logn) Omega(1)
-    public static boolean ricercaBinaria(int[] array, int elementoDaTrovare) {
+    public boolean ricercaBinaria(T[] array, T elementoDaTrovare) {
         int primo = 0;
         int ultimo = array.length - 1;
 
@@ -28,7 +26,7 @@ public class Ricerca {
             if (array[centro] == elementoDaTrovare) {
                 return true;
             } else {
-                if (array[centro] < elementoDaTrovare) {
+                if (array[centro].compareTo(elementoDaTrovare) > 0) {
                     primo = centro + 1;
                 } else {
                     ultimo = centro - 1;
@@ -41,7 +39,7 @@ public class Ricerca {
     }
 
     // O(n) Omega(n) Theta(n)
-    public static int ricercaMassimo(int[] array) {
+    public int ricercaMassimo(int[] array) {
         int massimo = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -53,20 +51,22 @@ public class Ricerca {
         return massimo;
     }
 
-    public static int ricercaLineareProdotti(Prodotto[] array, String nome) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].nome.equals(nome)) {
-                return i;
-            }
-        }
-        return -1;
-    }
+    /*
+     * public int ricercaLineareProdotti(Prodotto[] array, String nome) {
+     * for (int i = 0; i < array.length; i++) {
+     * if (array[i].nome.equals(nome)) {
+     * return i;
+     * }
+     * }
+     * return -1;
+     * }
+     */
 
-    public static boolean ricercaBinariaRicorsiva(int[] array, int elementoDaTrovare) {
+    public boolean ricercaBinariaRicorsiva(T[] array, T elementoDaTrovare) {
         return ricercaBinariaStepRicorsivo(array, 0, array.length - 1, elementoDaTrovare);
     }
 
-    private static boolean ricercaBinariaStepRicorsivo(int[] array, int inizio, int fine, int elementoDaTrovare) {
+    private boolean ricercaBinariaStepRicorsivo(T[] array, int inizio, int fine, T elementoDaTrovare) {
         if (inizio == fine) {
             return array[inizio] == elementoDaTrovare;
         }
@@ -76,7 +76,7 @@ public class Ricerca {
         if (array[centro] == elementoDaTrovare) {
             return true;
         } else {
-            if (array[centro] < elementoDaTrovare) {
+            if (array[centro].compareTo(elementoDaTrovare) < 0) {
                 return ricercaBinariaStepRicorsivo(array, centro + 1, fine, elementoDaTrovare);
             } else {
                 return ricercaBinariaStepRicorsivo(array, inizio, centro - 1, elementoDaTrovare);
