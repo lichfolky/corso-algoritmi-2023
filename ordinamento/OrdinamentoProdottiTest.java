@@ -1,7 +1,5 @@
 package ordinamento;
 
-import java.util.Arrays;
-
 import macchinetta.Prodotto;
 
 public class OrdinamentoProdottiTest {

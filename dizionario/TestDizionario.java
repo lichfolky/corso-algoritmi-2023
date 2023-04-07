@@ -3,22 +3,23 @@ package dizionario;
 public class TestDizionario {
 
     public static void main(String[] args) {
-        String[] studenti = {
-                "Eugenio",
-                "Enrico",
-                "Antonio",
-                "Bodasca",
-                "Gabriele",
-                "Roberto",
-                "Facundo",
-                "Simone",
-                "Zaccone",
-                "Josue",
-                "Elisabetta",
-                "Samuele",
-                "Chiara"
-        };
-
+        /*
+         * String[] studenti = {
+         * "Eugenio",
+         * "Enrico",
+         * "Antonio",
+         * "Bodasca",
+         * "Gabriele",
+         * "Roberto",
+         * "Facundo",
+         * "Simone",
+         * "Zaccone",
+         * "Josue",
+         * "Elisabetta",
+         * "Samuele",
+         * "Chiara"
+         * };
+         */
         Dizionario myDizionario = new DizionarioNonOrdinato();
 
         // int index = myDizionario.search("Samuele");

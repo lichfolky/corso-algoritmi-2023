@@ -4,6 +4,11 @@ public class Prodotto implements Comparable<Prodotto> {
     public String nome;
     public double prezzo;
 
+    public Prodotto(String nome) {
+        this.nome = nome;
+        this.prezzo = 0;
+    }
+
     public Prodotto(String nome, double prezzo) {
         this.nome = nome;
         this.prezzo = prezzo;

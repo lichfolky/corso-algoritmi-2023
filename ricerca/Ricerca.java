@@ -5,7 +5,7 @@ public class Ricerca<T extends Comparable<T>> {
     // O(n) Omega(1)
     public boolean ricercaLineare(T[] array, T elementoDaTrovare) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == elementoDaTrovare) { // 1
+            if (array[i].equals(elementoDaTrovare)) { // 1
                 return true;
             }
         }
@@ -15,7 +15,7 @@ public class Ricerca<T extends Comparable<T>> {
     // O(n) Omega(1)
     public int ricercaLineareIndice(T[] array, T elementoDaTrovare) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == elementoDaTrovare) { // 1
+            if (array[i].equals(elementoDaTrovare)) { // 1
                 return i;
             }
         }

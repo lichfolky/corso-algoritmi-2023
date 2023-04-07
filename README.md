@@ -10,6 +10,7 @@ In caso di necessità potete contattarmi qui: [mattia.folcarelli@gmail.com](mail
 - 2023-04-04 - **[Ricorsione, stack e ordinamento](2023-04-04.md)**
 - 2023-04-05 - **[Ordinamenti e intro divide et impera](2023-04-05.md)**
 - 2023-04-06 - **[QuickSort, dizionario e LinkedList](2023-04-06.md)**
+- 2023-04-07 - **[Coda (FIFO) e esercitazione coda supermercato](2023-04-07.md)**
 
 ## Studenti
 
