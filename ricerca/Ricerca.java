@@ -12,6 +12,16 @@ public class Ricerca<T extends Comparable<T>> {
         return false;
     }
 
+    // O(n) Omega(1)
+    public int ricercaLineareIndice(T[] array, T elementoDaTrovare) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == elementoDaTrovare) { // 1
+                return i;
+            }
+        }
+        return -1;
+    }
+
     // O(logn) Omega(1)
     public boolean ricercaBinaria(T[] array, T elementoDaTrovare) {
         int primo = 0;
@@ -80,6 +90,31 @@ public class Ricerca<T extends Comparable<T>> {
                 return ricercaBinariaStepRicorsivo(array, centro + 1, fine, elementoDaTrovare);
             } else {
                 return ricercaBinariaStepRicorsivo(array, inizio, centro - 1, elementoDaTrovare);
+            }
+        }
+    }
+
+    public int ricercaBinariaRicorsivaIndice(T[] array, T elementoDaTrovare) {
+        return ricercaBinariaIndiceStepRicorsivo(array, 0, array.length - 1, elementoDaTrovare);
+    }
+
+    private int ricercaBinariaIndiceStepRicorsivo(T[] array, int inizio, int fine, T elementoDaTrovare) {
+        if (inizio == fine) {
+            if (array[inizio] == elementoDaTrovare) {
+                return inizio;
+            } else {
+                return -1;
+            }
+        }
+        int centro = (inizio + fine) / 2;
+
+        if (array[centro] == elementoDaTrovare) {
+            return centro;
+        } else {
+            if (array[centro].compareTo(elementoDaTrovare) < 0) {
+                return ricercaBinariaIndiceStepRicorsivo(array, centro + 1, fine, elementoDaTrovare);
+            } else {
+                return ricercaBinariaIndiceStepRicorsivo(array, inizio, centro - 1, elementoDaTrovare);
             }
         }
     }

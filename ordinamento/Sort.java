@@ -245,7 +245,7 @@ public class Sort<T extends Comparable<T>> {
             }
         }
 
-        System.out.println("minimo sup" + minimo + " " + sup);
+        // System.out.println("minimo sup" + minimo + " " + sup);
         scambia(array, minimo, sup);
         return sup;
     }
