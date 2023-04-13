@@ -65,6 +65,7 @@ public class TestCassaQueue {
 
     }
 
+    // così riempie una cassa alla volta
     private static void smaltisciClienti() {
         for (int i = 0; i < casse.size(); i++) {
             Queue<String> cassa = casse.get(i);

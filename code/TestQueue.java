@@ -15,13 +15,13 @@ public class TestQueue {
 
         boolean esci = false;
         while (!esci) {
-            System.out.println("\u001B[0m" + coda);
-            System.out.println("\nScegli un'opzione:");
-            System.out.println("1: aggiungi un cliente in coda");
-            System.out.println("2: servi un cliente");
-            System.out.println("3: controlla chi è il prossimo della coda");
-            System.out.println("4: la coda è vuota?");
-            System.out.println("5: esci");
+            System.out.println("\u001B[0m \n" + coda);
+            System.out.println("\nScegli un'opzione:\n");
+            System.out.println("1: Aggiungi un cliente in coda");
+            System.out.println("2: Servi un cliente");
+            System.out.println("3: Controlla chi è il prossimo della coda");
+            System.out.println("4: La coda è vuota?");
+            System.out.println("5: Esci");
             System.out.println("");
             int scelta = scanner.nextInt();
             scanner.nextLine();
