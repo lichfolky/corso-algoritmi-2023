@@ -65,32 +65,13 @@ public class TestCassaQueue {
 
     }
 
-    // così riempie una cassa alla volta
-    // private static void smaltisciClienti() {
-    // for (int i = 0; i < casse.size(); i++) {
-    // Queue<String> cassa = casse.get(i);
-    // if (cassa instanceof QueueLinkedListLimitata<String>) {
-    // QueueLinkedListLimitata<String> cassaLimitata =
-    // (QueueLinkedListLimitata<String>) cassa;
-    // while (cassaLimitata.getSize() < cassaLimitata.getMax()) {
-    // if (!coda.isEmpty()) {
-    // String aux = coda.dequeue();
-    // System.out.println("il cliente " + aux + " va alla cassa " + i);
-    // cassaLimitata.enqueue(aux);
-    // } else {
-    // break;
-    // }
-    // }
-    // }
-    // }
-    // }
-
     private static void smaltisciClienti() {
 
         while (!coda.isEmpty()) {
 
-            // trovo la cassa con il minimo di clienti
-            // se ci sono clienti in coda lo inserisco nella cassa
+            // Trovo la cassa con il minimo di clienti
+            // se c'è spazio nella coda della cassa inserisco un cliente della coda
+            // altrimenti esco
 
             QueueLinkedList<String> cassaMin = (QueueLinkedList<String>) casse.get(0);
 
