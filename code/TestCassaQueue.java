@@ -29,7 +29,7 @@ public class TestCassaQueue {
             System.out.println("\nCoda: " + coda);
             // System.out.println("Cassa: " + casse);
             for (int i = 0; i < casse.size(); i++) {
-                System.out.println("Cassa " + (i + 1) + ": " + casse.get(i).toString());
+                System.out.println("Cassa " + i + ": " + casse.get(i).toString());
             }
 
             System.out.println("\nScegli un'opzione:");
@@ -66,20 +66,47 @@ public class TestCassaQueue {
     }
 
     // così riempie una cassa alla volta
+    // private static void smaltisciClienti() {
+    // for (int i = 0; i < casse.size(); i++) {
+    // Queue<String> cassa = casse.get(i);
+    // if (cassa instanceof QueueLinkedListLimitata<String>) {
+    // QueueLinkedListLimitata<String> cassaLimitata =
+    // (QueueLinkedListLimitata<String>) cassa;
+    // while (cassaLimitata.getSize() < cassaLimitata.getMax()) {
+    // if (!coda.isEmpty()) {
+    // String aux = coda.dequeue();
+    // System.out.println("il cliente " + aux + " va alla cassa " + i);
+    // cassaLimitata.enqueue(aux);
+    // } else {
+    // break;
+    // }
+    // }
+    // }
+    // }
+    // }
+
     private static void smaltisciClienti() {
-        for (int i = 0; i < casse.size(); i++) {
-            Queue<String> cassa = casse.get(i);
-            if (cassa instanceof QueueLinkedListLimitata<String>) {
-                QueueLinkedListLimitata<String> cassaLimitata = (QueueLinkedListLimitata<String>) cassa;
-                while (cassaLimitata.getSize() < cassaLimitata.getMax()) {
-                    if (!coda.isEmpty()) {
-                        String aux = coda.dequeue();
-                        System.out.println("il cliente " + aux + " va alla cassa " + i);
-                        cassaLimitata.enqueue(aux);
-                    } else {
-                        break;
-                    }
+
+        while (!coda.isEmpty()) {
+
+            // trovo la cassa con il minimo di clienti
+            // se ci sono clienti in coda lo inserisco nella cassa
+
+            QueueLinkedList<String> cassaMin = (QueueLinkedList<String>) casse.get(0);
+
+            for (int i = 0; i < casse.size(); i++) {
+                QueueLinkedList<String> cassa = (QueueLinkedList<String>) casse.get(i);
+                if (cassaMin.getSize() > cassa.getSize()) {
+                    cassaMin = cassa;
                 }
+            }
+            QueueLinkedListLimitata<String> cassaMinLimitata = (QueueLinkedListLimitata<String>) cassaMin;
+
+            if (cassaMinLimitata.getSize() < cassaMinLimitata.getMax()) {
+                String valore = coda.dequeue();
+                cassaMinLimitata.enqueue(valore);
+            } else {
+                return;
             }
         }
     }
