@@ -1,6 +1,7 @@
-package code;
+package linkedlist;
 
-import mystack.Stack;
+import queue.Queue;
+import stack.Stack;
 
 public class StackQueueLinkedList<T> implements Stack<T>, Queue<T> {
 
@@ -82,16 +83,20 @@ public class StackQueueLinkedList<T> implements Stack<T>, Queue<T> {
 
     // inserisco un elemento in testa (top)
     @Override
-    public void push(T element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'push'");
+    public void push(T value) {
+        Node<T> node = new Node<T>(value);
+        node.next = top;
+        top = node;
+        if (size == 0) {
+            last = node;
+        }
+        size++;
     }
 
     // tolgo e restituisco un elemento in testa (top)
     @Override
     public T pop() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pop'");
+        return dequeue();
     }
 
 }

@@ -1,4 +1,6 @@
-package code;
+package linkedlist;
+
+import queue.Queue;
 
 public class QueueLinkedList<T> implements Queue<T> {
 

@@ -1,4 +1,6 @@
-package code;
+package linkedlist;
+
+import queue.Queue;
 
 public class QueueLinkedListCoda<T> implements Queue<T> {
     /* TO FIX */

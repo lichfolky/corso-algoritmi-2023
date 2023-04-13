@@ -1,4 +1,4 @@
-package code;
+package linkedlist;
 
 public class QueueLinkedListLimitata<T> extends QueueLinkedList<T> {
 

@@ -1,6 +1,8 @@
-package code;
+package queue;
 
 import java.util.Scanner;
+
+import linkedlist.QueueLinkedList;
 
 public class TestQueue {
 
