@@ -1,42 +1,39 @@
 package formulauno;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import doublelinkedlist.Classifica;
 import doublelinkedlist.DoubleLinkedList;
 
 public class FormulaUno {
 
-    public static class Pilota {
-        public String nome;
-        public String scuderia;
-        public String tempo;
-        public int punti;
-
-        public Pilota(String nome, String scuderia, String tempo, int punti) {
-            this.nome = nome;
-            this.scuderia = scuderia;
-            this.tempo = tempo;
-            this.punti = punti;
-        }
-
-        @Override
-        public String toString() {
-            return "\t" + nome + "\t" + scuderia + "\t" + tempo + "\t" + punti;
-        }
-
-    }
-
     public static void main(String[] args) {
-        DoubleLinkedList<Pilota> classifica;
-        classifica = new DoubleLinkedList<Pilota>();
-        Pilota nuovoPilota = new Pilota("M. Verstappen", "Red Bull", "2:32:38.371", 25);
+
+        Classifica classifica;
+        classifica = new Classifica();
+
+        Pilota nuovoPilota = new Pilota("M. Verstappen", "Red Bul", 25);
         classifica.insert(nuovoPilota);
-        nuovoPilota = new Pilota("L. Hamilton", "Mercedes", "+0.179s", 18);
+        nuovoPilota = new Pilota("L. Hamilton", "Mercedes", 18);
         classifica.insert(nuovoPilota);
-        nuovoPilota = new Pilota("F. Alonso", "Aston Martin", "+0.769s", 15);
+        nuovoPilota = new Pilota("F. Alonso", "Aston Martin", 15);
         classifica.insert(nuovoPilota);
-        nuovoPilota = new Pilota("L. Stroll", "Aston Martin", "+3.082s", 12);
+        nuovoPilota = new Pilota("L. Stroll", "Aston Martin", 12);
         classifica.insert(nuovoPilota);
-        nuovoPilota = new Pilota("S. Perez", "Red Bull", "+3.320s", 11);
+        nuovoPilota = new Pilota("S. Perez", "Red Bull", 11);
         classifica.insert(nuovoPilota);
+
+        Calendar arrivoDelPrimo = Calendar.getInstance();
+
+        arrivoDelPrimo.set(Calendar.HOUR, 2);
+        arrivoDelPrimo.set(Calendar.MINUTE, 32);
+        arrivoDelPrimo.set(Calendar.SECOND, 38);
+        arrivoDelPrimo.set(Calendar.MILLISECOND, 371);
+
+        double[] scarti = { 0.0, 0.179, 0.769, 3.082, 3.32 };
+
+        classifica.aggiungiTempi(arrivoDelPrimo, scarti);
 
         System.out.println(classifica);
 
