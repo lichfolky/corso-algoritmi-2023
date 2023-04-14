@@ -9,7 +9,7 @@ public interface LinkedList<T> {
     public T remove(int index);
 
     /* Restituisce il suo valore di un elemento alla posizione index */
-    public T get(int Index);
+    public T get(int index);
 
     public int getSize();
 
