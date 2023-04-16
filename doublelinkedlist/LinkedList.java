@@ -11,6 +11,9 @@ public interface LinkedList<T> {
     /* Restituisce il suo valore di un elemento alla posizione index */
     public T get(int index);
 
+    /* Restituisce l'indice il primo un elemento trovato, altrimenti -1 */
+    public int search(T element);
+
     public int getSize();
 
     public boolean isEmpty();

@@ -1,17 +1,13 @@
 package formulauno;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import doublelinkedlist.Classifica;
-import doublelinkedlist.DoubleLinkedList;
 
 public class FormulaUno {
 
     public static void main(String[] args) {
 
-        Classifica classifica;
-        classifica = new Classifica();
+        Classifica classifica = new Classifica();
 
         Pilota nuovoPilota = new Pilota("M. Verstappen", "Red Bul", 25);
         classifica.insert(nuovoPilota);
@@ -25,7 +21,6 @@ public class FormulaUno {
         classifica.insert(nuovoPilota);
 
         Calendar arrivoDelPrimo = Calendar.getInstance();
-
         arrivoDelPrimo.set(Calendar.HOUR, 2);
         arrivoDelPrimo.set(Calendar.MINUTE, 32);
         arrivoDelPrimo.set(Calendar.SECOND, 38);

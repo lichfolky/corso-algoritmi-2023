@@ -10,7 +10,7 @@ public class Pilota {
     public Calendar tempo;
     public int punti;
 
-    SimpleDateFormat timeFormatter;
+    SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss.SSS");
 
     public Pilota(String nome, String scuderia, int punti) {
         this.nome = nome;
@@ -18,7 +18,6 @@ public class Pilota {
         this.punti = punti;
         this.scarto = 0.0;
         this.tempo = null;
-        this.timeFormatter = new SimpleDateFormat("HH:mm:ss.SSS");
     }
 
     @Override
@@ -26,10 +25,8 @@ public class Pilota {
         if (tempo != null) {
             String tempoFormattato = timeFormatter.format(tempo.getTime());
             return "\t" + nome + "\t" + scuderia + "\t" + tempoFormattato + "\t" + punti;
-
         } else
             return "\t" + nome + "\t" + scuderia + "\t" + punti;
-
     }
 
 }
