@@ -9,7 +9,7 @@ public class FormulaUno {
 
         Classifica classifica = new Classifica();
 
-        Pilota nuovoPilota = new Pilota("M. Verstappen", "Red Bul", 25);
+        Pilota nuovoPilota = new Pilota("M. Verstappen", "Red Bull", 25);
         classifica.insert(nuovoPilota);
         nuovoPilota = new Pilota("L. Hamilton", "Mercedes", 18);
         classifica.insert(nuovoPilota);
@@ -19,6 +19,10 @@ public class FormulaUno {
         classifica.insert(nuovoPilota);
         nuovoPilota = new Pilota("S. Perez", "Red Bull", 11);
         classifica.insert(nuovoPilota);
+
+        Pilota pilotaDaCercare = new Pilota("M. Verstappen", "Red Bull", 0);
+
+        System.out.println("trovato: " + classifica.search(pilotaDaCercare));
 
         Calendar arrivoDelPrimo = Calendar.getInstance();
         arrivoDelPrimo.set(Calendar.HOUR, 2);
@@ -35,5 +39,23 @@ public class FormulaUno {
         System.out.println("PRIMO: " + classifica.get(0).nome);
         System.out.println("SECONDO: " + classifica.get(1).nome);
         System.out.println("TERZO: " + classifica.get(2).nome);
+
+        System.out.println("LA GARA è FINITA! Si chiude tutto:");
+
+        System.out.println("Eliminato: " + classifica.remove(0).nome);
+
+        System.out.println(classifica);
+
+        System.out.println("Eliminato: " + classifica.remove(3).nome);
+
+        System.out.println(classifica);
+
+        pilotaDaCercare = new Pilota("F. Alonso", "Aston Martin", 15);
+        System.out.println("Eliminato: " + classifica.remove(classifica.search(pilotaDaCercare)).nome);
+
+        System.out.println(classifica);
+        System.out.println("Eliminato: " + classifica.remove(1).nome);
+        System.out.println("Eliminato: " + classifica.remove(0).nome);
+
     }
 }

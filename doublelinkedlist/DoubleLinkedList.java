@@ -80,12 +80,6 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
     }
 
     @Override
-    public T remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
-    }
-
-    @Override
     public int getSize() {
         return size;
     }
@@ -112,6 +106,69 @@ public class DoubleLinkedList<T> implements LinkedList<T> {
         // str += "\nUltimo: " + last.value.toString();
 
         return str;
+    }
+
+    @Override
+    public int search(T value) {
+        int index = -1;
+
+        DoubleNode<T> aux = first;
+        for (int i = 0; i < size; i++) {
+            if (aux.value.equals(value)) {
+                index = i;
+                break;
+            }
+            aux = aux.next;
+        }
+
+        return index;
+    }
+
+    @Override
+    public T remove(int index) {
+        T value;
+        if (index > size - 1) {
+            return null;
+        }
+
+        if (size == 1) {
+            value = first.value;
+            first = null;
+            last = null;
+            size--;
+            return value;
+        }
+
+        if (index == 0) {
+            value = first.value;
+            if (first.next != null) {
+                first = first.next;
+                first.prev = null;
+            }
+            size--;
+            return value;
+        }
+
+        if (index == size - 1) {
+            value = last.value;
+            if (last.prev != null) {
+                last = last.prev;
+                last.next = null;
+            }
+            size--;
+            return value;
+        }
+
+        DoubleNode<T> aux = first;
+        for (int i = 0; i < index; i++) {
+            aux = aux.next;
+        }
+
+        aux.prev.next = aux.next;
+        aux.next.prev = aux.prev;
+
+        size--;
+        return aux.value;
     }
 
 }

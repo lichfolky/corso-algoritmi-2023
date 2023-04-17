@@ -12,7 +12,7 @@ public interface LinkedList<T> {
     public T get(int index);
 
     /* Restituisce l'indice il primo un elemento trovato, altrimenti -1 */
-    public int search(T element);
+    public int search(T value);
 
     public int getSize();
 

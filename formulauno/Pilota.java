@@ -29,4 +29,14 @@ public class Pilota {
             return "\t" + nome + "\t" + scuderia + "\t" + punti;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Pilota) {
+            Pilota objPilota = (Pilota) obj;
+            return this.nome == objPilota.nome && this.scuderia == objPilota.scuderia;
+        } else {
+            return false;
+        }
+
+    }
 }
