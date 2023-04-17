@@ -1,5 +1,7 @@
 package arraycircolare;
 
+import java.util.Arrays;
+
 import queue.Queue;
 
 public class ArrayCircolare implements Queue<Object> {
@@ -33,12 +35,12 @@ public class ArrayCircolare implements Queue<Object> {
     @Override
     public void enqueue(Object value) {
         if (size <= array.length) {
+            array[last] = value;
             if (last < array.length - 1) {
                 last++;
             } else {
                 last = 0;
             }
-            array[last] = value;
             size++;
         }
     }
@@ -46,8 +48,26 @@ public class ArrayCircolare implements Queue<Object> {
     /* Restituisco l'elemento "first", aggiorno la sua nuova posizione, decremento size */
     @Override
     public Object dequeue() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'dequeue'");
+        if (size == 0) {
+            return null;
+        }
+        Object value = array[first];
+
+        // non è necessario perchè sarà riscritto
+        array[first] = null;
+        // aggiorno posizione first
+        if (first < array.length - 1) {
+            first++;
+        } else {
+            first = 0;
+        }
+        size--;
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(array);
     }
 
 }
