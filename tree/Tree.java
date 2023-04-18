@@ -1,5 +1,8 @@
 package tree;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public interface Tree<T> {
 
     /* Inserisce un figlio con valore value, ad un padre */

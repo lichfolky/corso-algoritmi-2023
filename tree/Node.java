@@ -19,15 +19,6 @@ public class Node<T> {
     }
 
     public String prettyPrint(String s) {
-
-        String str = this.toString() + "\n";
-        if (leftChild != null) {
-            str += s + leftChild.prettyPrint(s + " ");
-        }
-        if (rightChild != null) {
-            str += s + rightChild.prettyPrint(s + " ");
-        }
-        return str;
-
+        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
 }

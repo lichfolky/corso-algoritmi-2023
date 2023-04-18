@@ -1,5 +1,6 @@
 package tree;
 
+import linkedlist.LinkedList;
 import linkedlist.QueueLinkedList;
 import linkedlist.StackQueueLinkedList;
 import queue.Queue;
