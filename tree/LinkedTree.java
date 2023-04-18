@@ -1,11 +1,11 @@
 package tree;
 
-import linkedlist.LinkedList;
-import linkedlist.QueueLinkedList;
-import linkedlist.StackQueueLinkedList;
+import java.util.LinkedList;
+
 import queue.Queue;
 import stack.Stack;
 
+/* Albero binario */
 public class LinkedTree<T> implements Tree<T> {
 
     public Node<T> radice;
@@ -49,20 +49,20 @@ public class LinkedTree<T> implements Tree<T> {
             size--;
         }
     }
-    /* 
+
     @Override
-    public Node<T>[] getFigli(Node<T> padre) {
-        Node[] figli = new [2];
-    
+    public LinkedList<Node<T>> getFigli(Node<T> padre) {
+
+        LinkedList<Node<T>> lista = new LinkedList<Node<T>>();
+
         if (padre.leftChild == null) {
-            padre.leftChild = new Node<T>(value);
-            size++;
+            lista.push(padre.leftChild);
         }
         if (padre.rightChild == null) {
-            padre.rightChild = new Node<T>(value);
-            size++;
+            lista.push(padre.rightChild);
         }
-    }*/
+        return lista;
+    }
 
     @Override
     public Node<T> getPadre(Node<T> figlio) {
@@ -70,10 +70,11 @@ public class LinkedTree<T> implements Tree<T> {
     }
 
     @Override
-    public void visitaProfondita() {
-        Stack<Node<T>> stackNodi = new StackQueueLinkedList<Node<T>>();
+    public LinkedList<T> visitaProfondita() {
+        LinkedList<T> lista = new LinkedList<T>();
+        LinkedList<Node<T>> stackNodi = new LinkedList<Node<T>>();
         if (radice == null) {
-            return;
+            return null;
         }
         stackNodi.push(radice);
         while (!stackNodi.isEmpty()) {
@@ -84,13 +85,14 @@ public class LinkedTree<T> implements Tree<T> {
             if (nodo.leftChild != null) {
                 stackNodi.push(nodo.leftChild);
             }
-            System.out.println(nodo.value);
+            lista.add(nodo.value);
         }
+        return lista;
     }
 
     @Override
     public Node<T> searchProfondita(T value) {
-        Stack<Node<T>> stackNodi = new StackQueueLinkedList<Node<T>>();
+        LinkedList<Node<T>> stackNodi = new LinkedList<Node<T>>();
         if (radice == null) {
             return null;
         }
@@ -106,38 +108,37 @@ public class LinkedTree<T> implements Tree<T> {
             if (nodo.leftChild != null) {
                 stackNodi.push(nodo.leftChild);
             }
-            System.out.println(nodo.value);
         }
 
         return null;
     }
 
     @Override
-    public void visitaAmpiezza() {
-
-        Queue<Node<T>> stackNodi = new QueueLinkedList<Node<T>>();
+    public LinkedList<T> visitaAmpiezza() {
+        LinkedList<T> lista = new LinkedList<T>();
+        LinkedList<Node<T>> stackNodi = new LinkedList<Node<T>>();
         if (radice == null) {
-            return;
+            return null;
         }
-        stackNodi.enqueue(radice);
+        stackNodi.add(radice);
         while (!stackNodi.isEmpty()) {
-            Node<T> nodo = stackNodi.dequeue();
+            Node<T> nodo = stackNodi.poll();
             if (nodo.leftChild != null) {
-                stackNodi.enqueue(nodo.leftChild);
+                stackNodi.add(nodo.leftChild);
             }
             if (nodo.rightChild != null) {
-                stackNodi.enqueue(nodo.rightChild);
+                stackNodi.add(nodo.rightChild);
             }
-
-            System.out.println(nodo.value);
+            lista.add(nodo.value);
         }
+        return lista;
     }
 
     @Override
     public String toString() {
 
         String str = "";
-        Stack<Node<T>> stackNodi = new StackQueueLinkedList<Node<T>>();
+        LinkedList<Node<T>> stackNodi = new LinkedList<Node<T>>();
         if (radice == null) {
             return "";
         }
@@ -158,10 +159,8 @@ public class LinkedTree<T> implements Tree<T> {
         return str;
     }
 
-    @Override
     public String prettyPrint() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
+        return radice.prettyPrint(0);
     }
 
 }

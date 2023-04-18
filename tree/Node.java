@@ -15,10 +15,22 @@ public class Node<T> {
 
     @Override
     public String toString() {
-        return "[" + value + "]";
+        return value.toString();
     }
 
-    public String prettyPrint(String s) {
-        throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
+    public String prettyPrint(int lv) {
+        String str = "";
+        if (lv > 0) {
+            str += " ".repeat(lv * 3) + "│ \n";
+            str += " ".repeat(lv * 3) + "└──";
+        }
+        str += this.toString() + "\n";
+        if (leftChild != null) {
+            str += leftChild.prettyPrint(lv + 1);
+        }
+        if (rightChild != null) {
+            str += rightChild.prettyPrint(lv + 1);
+        }
+        return str;
     }
 }

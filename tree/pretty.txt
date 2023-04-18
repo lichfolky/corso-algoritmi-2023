@@ -1,0 +1,2 @@
+       str += " ".repeat(lv * 3) + "│ \n";
+            str += " ".repeat(lv * 3) + "└──";

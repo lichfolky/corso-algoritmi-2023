@@ -1,7 +1,6 @@
 package tree;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public interface Tree<T> {
 
@@ -10,13 +9,13 @@ public interface Tree<T> {
 
     void delete(Node<T> node);
 
-    // Node<T>[] getFigli(Node<T> padre);
+    LinkedList<Node<T>> getFigli(Node<T> padre);
 
     Node<T> getPadre(Node<T> figlio);
 
-    void visitaProfondita();
+    LinkedList<T> visitaProfondita();
 
-    void visitaAmpiezza();
+    LinkedList<T> visitaAmpiezza();
 
     Node<T> searchProfondita(T value);
 

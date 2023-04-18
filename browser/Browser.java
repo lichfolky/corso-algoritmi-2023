@@ -1,10 +1,7 @@
 package browser;
 
-import java.util.Arrays;
-
 import tree.LinkedTree;
 import tree.Node;
-import tree.SimpleTree;
 
 public class Browser {
     public static void main(String[] args) {
@@ -29,6 +26,8 @@ public class Browser {
         System.out.println(albero);
         System.out.println("---");
         System.out.println(albero.searchProfondita("mattia.com"));
-        System.out.println("radice: \n" + albero.radice.prettyPrint(" "));
+        System.out.println("\nAmpiezza:" + albero.visitaAmpiezza());
+        System.out.println("\nProfondità:" + albero.visitaProfondita());
+        System.out.println("\nRadice: \n" + albero.prettyPrint());
     }
 }
