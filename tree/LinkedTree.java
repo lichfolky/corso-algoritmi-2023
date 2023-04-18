@@ -7,7 +7,7 @@ import stack.Stack;
 
 public class LinkedTree<T> implements Tree<T> {
 
-    Node<T> radice;
+    public Node<T> radice;
     int size;
 
     public LinkedTree() {

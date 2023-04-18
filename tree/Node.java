@@ -15,15 +15,19 @@ public class Node<T> {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        String str = "[" + value + "]\n";
+        return "[" + value + "]";
+    }
+
+    public String prettyPrint(String s) {
+
+        String str = this.toString() + "\n";
         if (leftChild != null) {
-            str += "  " + leftChild;
+            str += s + leftChild.prettyPrint(s + " ");
         }
         if (rightChild != null) {
-            str += "  " + rightChild;
+            str += s + rightChild.prettyPrint(s + " ");
         }
-
         return str;
+
     }
 }

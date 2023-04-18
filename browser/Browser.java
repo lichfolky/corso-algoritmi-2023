@@ -29,5 +29,6 @@ public class Browser {
         System.out.println(albero);
         System.out.println("---");
         System.out.println(albero.searchProfondita("mattia.com"));
+        System.out.println("radice: \n" + albero.radice.prettyPrint(" "));
     }
 }
