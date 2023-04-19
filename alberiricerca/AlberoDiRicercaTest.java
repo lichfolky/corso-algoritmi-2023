@@ -13,6 +13,11 @@ public class AlberoDiRicercaTest {
         albero.insertOrdered(10, "Corda");
         albero.insertOrdered(22, "Chiave inglese");
         System.out.println(albero.prettyPrint());
+        System.out.println(albero.search(6));
+        System.out.println(albero.search(7));
+        System.out.println(albero.search(22));
+        System.out.println(albero.search(10));
+        System.out.println(albero.search(2));
     }
 
 }

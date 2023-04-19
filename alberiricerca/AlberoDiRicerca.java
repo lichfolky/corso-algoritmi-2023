@@ -42,6 +42,20 @@ public class AlberoDiRicerca extends LinkedTree<Element> {
      * Se non trova la chiave restituisce null
      */
     public Element search(int key) {
+        Node<Element> auxNode = this.radice;
+
+        while (auxNode != null) {
+            if (key == auxNode.value.key) {
+                return auxNode.value;
+            }
+            if (key < auxNode.value.key) {
+                auxNode = auxNode.leftChild;
+            }
+            if (key > auxNode.value.key) {
+                auxNode = auxNode.rightChild;
+            }
+
+        }
         return null;
     }
 
