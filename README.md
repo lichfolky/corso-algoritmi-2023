@@ -12,6 +12,12 @@ In caso di necessità potete contattarmi qui: [mattia.folcarelli@gmail.com](mail
 - 2023-04-06 - **[QuickSort, dizionario e LinkedList](2023-04-06.md)**
 - 2023-04-07 - **[Coda (FIFO) e esercitazione coda supermercato](2023-04-07.md)**
 
+- 2023-04-13 - **[LinkedList come code e pile](2023-04-13.md)**
+- 2023-04-14 - **[LinkedList bidirezionali](2023-04-14.md)**
+- 2023-04-17 - **[Alberi binari memorizzati con array](2023-04-17.md)**
+- 2023-04-18 - **[Alberi linkati d-ari e con k-figli](2023-04-18.md)**
+- 2023-04-19 - **[Alberi di riceca e algoritmi Greedy](2023-04-19.md)**
+
 ## Studenti
 
 Antonio Fiumanò - https://github.com/TonyFiuma  
