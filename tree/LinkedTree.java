@@ -2,14 +2,11 @@ package tree;
 
 import java.util.LinkedList;
 
-import queue.Queue;
-import stack.Stack;
-
 /* Albero binario */
 public class LinkedTree<T> implements Tree<T> {
 
     public Node<T> radice;
-    int size;
+    private int size;
 
     public LinkedTree() {
         this.radice = null;
@@ -35,6 +32,18 @@ public class LinkedTree<T> implements Tree<T> {
             return padre.rightChild;
         }
         return null;
+    }
+
+    public Node<T> insertLeft(Node<T> padre, T value) {
+        padre.leftChild = new Node<T>(value);
+        size++;
+        return padre.leftChild;
+    }
+
+    public Node<T> insertRight(Node<T> padre, T value) {
+        padre.rightChild = new Node<T>(value);
+        size++;
+        return padre.rightChild;
     }
 
     @Override
@@ -161,6 +170,10 @@ public class LinkedTree<T> implements Tree<T> {
 
     public String prettyPrint() {
         return radice.prettyPrint(0);
+    }
+
+    public int getSize() {
+        return size;
     }
 
 }

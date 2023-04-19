@@ -19,7 +19,7 @@ public class SimpleTree {
     // è p[d * v + i]
     // è p[2 * v + (0 o 1)]
     // se indexPadre == -1  allora inseriamo come radice
-    @Override
+
     public int insert(int indexPadre, Object value) {
         if (indexPadre == -1) {
             array[1] = value;
@@ -41,13 +41,11 @@ public class SimpleTree {
         }
     }
 
-    @Override
     public void delete(int index) {
         array[index] = null;
         padri[index] = -1;
     }
 
-    @Override
     public Object[] getFigli(int indexPadre) {
         Object[] figli = new Object[2];
         figli[0] = array[2 * indexPadre];
@@ -55,17 +53,10 @@ public class SimpleTree {
         return figli;
     }
 
-    @Override
     public int getPadre(int indexFiglio) {
         return padri[indexFiglio];
     }
 
-    @Override
-    public String prettyPrint() {
-        return "";
-    }
-
-    @Override
     public void visitaProfondita() {
         Stack<Integer> stackNodi = new StackQueueLinkedList<Integer>();
         stackNodi.push(1);
@@ -86,7 +77,6 @@ public class SimpleTree {
         }
     }
 
-    @Override
     public String toString() {
         return Arrays.toString(array);
     }

@@ -42,6 +42,11 @@ public class GenericTree<T> {
         public String toString() {
             return value.toString();
         }
+
+        @Override
+        protected Object clone() {
+            return new Node<E>(value);
+        }
     }
 
     Node<T> radice;
@@ -59,7 +64,18 @@ public class GenericTree<T> {
         } else {
             padre.addFiglio(node);
         }
+        size++;
         return node;
+    }
+
+    public Node<T> insert(Node<T> padre, GenericTree<T> tree) {
+        if (padre == null) {
+            radice = tree.radice;
+        } else {
+            padre.addFiglio(tree.radice);
+        }
+        size += tree.getSize();
+        return tree.radice;
     }
 
     public void delete(Node<T> node) {
@@ -104,6 +120,10 @@ public class GenericTree<T> {
 
     public String prettyPrint() {
         return radice.prettyPrint(0);
+    }
+
+    public int getSize() {
+        return size;
     }
 
 }
