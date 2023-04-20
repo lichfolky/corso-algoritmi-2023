@@ -32,7 +32,6 @@ Josue Manuel Condori Quisbert - https://github.com/JCondoriGithub
 Roberto Blasi - https://github.com/robbbb999  
 Samuele Richetto - https://github.com/samuNeo23  
 Simone Di Carlo - https://github.com/s-dc  
-Zaccone Chiara - https://github.com/ChiaraZaccone  
 
 ## Risorse
 
