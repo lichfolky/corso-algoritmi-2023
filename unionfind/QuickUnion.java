@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class QuickFind<T> implements UnionFind<T> {
+public class QuickUnion<T> implements UnionFind<T> {
 
     ArrayList<Node<T>> nodes;
     ArrayList<SetNode> sets;
 
-    public QuickFind() {
+    public QuickUnion() {
         nodes = new ArrayList<Node<T>>();
         sets = new ArrayList<SetNode>();
     }
@@ -21,18 +21,16 @@ public class QuickFind<T> implements UnionFind<T> {
 
     @Override
     public UnionFind.SetNode find(UnionFind.Node<T> node) {
-        return node.set;
+        SetNode set = node.set;
+        while (set.parent != null) {
+            set = set.parent;
+        }
+        return set;
     }
 
     @Override
     public void union(UnionFind.SetNode set1, UnionFind.SetNode set2) {
-        Node<T> nodeAux;
-        for (int i = 0; i < nodes.size(); i++) {
-            nodeAux = nodes.get(i);
-            if (nodeAux.set.equals(set2)) {
-                nodeAux.set = set1;
-            }
-        }
+        set2.parent = set1;
     }
 
     @Override
@@ -49,7 +47,7 @@ public class QuickFind<T> implements UnionFind<T> {
     public String toString() {
         String str = "";
         for (Node<T> node : nodes) {
-            str += node.set.toString() + ": " + node.toString() + "\n";
+            str += find(node).toString() + ": " + node.toString() + "\n";
         }
         return str;
     }

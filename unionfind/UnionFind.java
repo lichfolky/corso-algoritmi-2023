@@ -9,13 +9,25 @@ public interface UnionFind<T> {
             this.value = value;
             this.set = new UnionFind.SetNode(key);
         }
+
+        @Override
+        public String toString() {
+            return "(" + key + ") " + value.toString();
+        }
     }
 
     public class SetNode {
         int key;
+        SetNode parent;
 
         public SetNode(int key) {
             this.key = key;
+            this.parent = null;
+        }
+
+        @Override
+        public String toString() {
+            return "" + key;
         }
     }
 
@@ -35,7 +47,7 @@ public interface UnionFind<T> {
      * Tutti gli elementi di set 2 avranno come insieme di 
      * appartenenza il primo set (set1).
      */
-    public SetNode union(SetNode set1, SetNode set2);
+    public void union(SetNode set1, SetNode set2);
 
     public SetNode getSet(int key);
 

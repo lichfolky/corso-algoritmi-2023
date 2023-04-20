@@ -6,13 +6,22 @@ public class TestUnionFind {
 
     public static void main(String[] args) {
         scanner = new Scanner(System.in);
-        insiemi = new QuickFind<String>();
+        insiemi = new QuickUnion<String>();
         clearScreen();
-        System.out.println("\u001B[103m" + "\nBenvenuto!!\n");
 
+        insiemi.make("Mattia");
+        insiemi.make("Maria");
+        insiemi.make("Luca");
+        insiemi.make("Marco");
+        insiemi.make("Anna");
+
+        //System.out.println("\u001B[103m" + "\nBenvenuto!!\n");
+        System.out.println("\nBenvenuto!!\n");
         boolean esci = false;
         while (!esci) {
+            System.out.println();
             System.out.println(insiemi);
+            System.out.println();
             System.out.println("\nScegli un'opzione:\n");
             System.out.println("1: Inserisci un elemento");
             System.out.println("2: Cerca un elemento");
@@ -22,7 +31,6 @@ public class TestUnionFind {
             int scelta = scanner.nextInt();
             scanner.nextLine();
             clearScreen();
-            System.out.println("");
             switch (scelta) {
                 case 1:
                     inserisci();
@@ -42,9 +50,13 @@ public class TestUnionFind {
     }
 
     private static void unisci() {
+        System.out.println();
+
         System.out.println("Inserisci primo insieme\n");
         int key1 = scanner.nextInt();
         scanner.nextLine();
+        System.out.println();
+
         System.out.println("Inserisci secondo insieme\n");
         int key2 = scanner.nextInt();
         scanner.nextLine();
@@ -52,13 +64,15 @@ public class TestUnionFind {
     }
 
     private static void cerca() {
-        System.out.println("Inserisci l'elemento\n");
+        System.out.println();
+        System.out.println("Inserisci la chiave dell'elemento\n");
         int key = scanner.nextInt();
         scanner.nextLine();
         System.out.println("trovato: " + insiemi.find(insiemi.getNode(key)));
     }
 
     private static void inserisci() {
+        System.out.println();
         System.out.println("Inserisci nome\n");
         String nome = scanner.next();
         System.out.println("inserito: " + insiemi.make(nome));
