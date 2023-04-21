@@ -8,7 +8,15 @@ public class MyHashMap extends HashMap<String, Persona> {
 
     @Override
     public int hashFunction(String element) {
-        return (int) element.charAt(0);
+        char inizialeMinuscola = element.toLowerCase().charAt(0);
+        int code = (int) inizialeMinuscola;
+        code = code - 97;
+        return code;
     }
+
+    /* 
+    public void set(String key, Persona element) {
+        super.set(key.toLowerCase(), element);
+    }*/
 
 }
