@@ -20,6 +20,11 @@ public interface Grafo {
         public int getNode2() {
             return node2;
         }
+
+        @Override
+        public String toString() {
+            return "(" + node1 + "->" + node2 + ")";
+        }
     }
 
     public int addNode();
@@ -28,5 +33,12 @@ public interface Grafo {
 
     public boolean adjacent(int node1, int node2);
 
-    public List<Edge> getEdges(int startNode);
+    public List<? extends Edge> getEdges(int startNode);
+
+    public List<Integer> visitaAmpiezza(int startNode);
+
+    public List<Integer> visitaProfondita(int startNode);
+
+    public List<? extends Edge> getIncomingEdges(int endNode);
+
 }

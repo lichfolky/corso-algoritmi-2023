@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 // con lista di adiacenza
 public class GrafoOrientato implements Grafo {
@@ -49,6 +50,19 @@ public class GrafoOrientato implements Grafo {
         return edgeList;
     }
 
+    public List<Edge> getIncomingEdges(int endNode) {
+        List<Edge> edgeList = new LinkedList<Edge>();
+        for (int i = 0; i < adjacencyList.size(); i++) {
+            List<Integer> nodeAdjacencyList = adjacencyList.get(i);
+            for (Integer incomingEdge : nodeAdjacencyList) {
+                if (incomingEdge == endNode) {
+                    edgeList.add(new Edge(i, endNode));
+                }
+            }
+        }
+        return edgeList;
+    }
+
     @Override
     public String toString() {
         String str = "";
@@ -60,10 +74,10 @@ public class GrafoOrientato implements Grafo {
         return str;
     }
 
-    public void visitaAmpiezza(int startNode) {
-        System.out.println("inizio visita" + startNode);
-
+    public List<Integer> visitaAmpiezza(int startNode) {
+        System.out.println("inizio visita con " + startNode);
         Queue<Integer> queue = new LinkedList<Integer>();
+        LinkedList<Integer> visita = new LinkedList<Integer>();
         boolean[] visitati = new boolean[adjacencyList.size()];
         for (int i = 0; i < visitati.length; i++) {
             visitati[i] = false;
@@ -73,17 +87,34 @@ public class GrafoOrientato implements Grafo {
             int current = queue.poll();
             visitati[current] = true;
             // queue.addAll(adjacencyList.get(current));
-
+            visita.add(current);
             ArrayList<Integer> lista = adjacencyList.get(current);
             for (Integer node : lista) {
                 if (!visitati[node]) {
                     queue.add(node);
                 }
             }
-            System.out.println(current);
         }
-        System.out.println("fine visita");
+        return visita;
+    }
 
+    public List<Integer> visitaProfondita(int startNode) {
+        LinkedList<Integer> visita = new LinkedList<Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
+        boolean[] visited = new boolean[adjacencyList.size()];
+        stack.push(startNode);
+        while (!stack.isEmpty()) {
+            int current = stack.pop();
+            visita.add(current);
+            visited[current] = true;
+            ArrayList<Integer> lista = adjacencyList.get(current);
+            for (Integer node : lista) {
+                if (!visited[node]) {
+                    stack.push(node);
+                }
+            }
+        }
+        return visita;
     }
 
 }
