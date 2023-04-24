@@ -2,7 +2,7 @@ package grafi;
 
 public class GrafoTest {
     public static void main(String[] args) {
-        GrafoOrientato grafo = new GrafoOrientato();
+        Grafo grafo = new GrafoNonOrientatoPesato();
         for (int i = 0; i < 5; i++) {
             grafo.addNode();
         }

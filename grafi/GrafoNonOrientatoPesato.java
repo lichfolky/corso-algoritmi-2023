@@ -27,10 +27,13 @@ public class GrafoNonOrientatoPesato implements Grafo {
         for (int i = 0; i < nodo; i++) {
             this.matriceAdiacenza.get(i).add(0);
         }
-        ArrayList<Integer> listaAdiacenzaNodo = new ArrayList<Integer>(nodo);
-        for (int i = 0; i < listaAdiacenzaNodo.size(); i++) {
-            listaAdiacenzaNodo.set(i, 0);
+        ArrayList<Integer> listaAdiacenzaNodo = new ArrayList<Integer>(nodo + 1);
+
+        for (int i = 0; i < this.matriceAdiacenza.size() + 1; i++) {
+            listaAdiacenzaNodo.add(0);
         }
+        this.matriceAdiacenza.add(listaAdiacenzaNodo);
+
         return nodo;
     }
 
@@ -45,31 +48,39 @@ public class GrafoNonOrientatoPesato implements Grafo {
 
     @Override
     public boolean adjacent(int node1, int node2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'adjacent'");
+        return matriceAdiacenza.get(node1).get(node2) > 0;
     }
 
     @Override
     public List<OrientedWeightedEdge> getEdges(int startNode) {
-        return null;
+
+        ArrayList<Integer> list = this.matriceAdiacenza.get(startNode);
+        List<OrientedWeightedEdge> listaArchi = new ArrayList<OrientedWeightedEdge>(list.size());
+        for (int i = 0; i < list.size(); i++) {
+            int arco = list.get(i);
+            if (arco > 0) {
+                listaArchi.add(new OrientedWeightedEdge(startNode, i, arco));
+            }
+        }
+        return listaArchi;
     }
 
     @Override
     public List<OrientedWeightedEdge> getIncomingEdges(int endNode) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getIncomingEdges'");
+        List<OrientedWeightedEdge> listaArchi = new ArrayList<OrientedWeightedEdge>(matriceAdiacenza.size());
+        for (int i = 0; i < matriceAdiacenza.size(); i++) {
+            ArrayList<Integer> list = matriceAdiacenza.get(i);
+            int arco = list.get(endNode);
+            if (arco > 0) {
+                listaArchi.add(new OrientedWeightedEdge(i, endNode, arco));
+            }
+        }
+        return listaArchi;
     }
 
     @Override
-    public List<Integer> visitaAmpiezza(int startNode) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'visitaAmpiezza'");
-    }
-
-    @Override
-    public List<Integer> visitaProfondita(int startNode) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'visitaProfondita'");
+    public int numNodi() {
+        return matriceAdiacenza.size();
     }
 
 }

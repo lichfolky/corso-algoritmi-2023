@@ -3,8 +3,6 @@ package grafi;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
 
 // con lista di adiacenza
 public class GrafoOrientato implements Grafo {
@@ -74,6 +72,7 @@ public class GrafoOrientato implements Grafo {
         return str;
     }
 
+    /* 
     public List<Integer> visitaAmpiezza(int startNode) {
         System.out.println("inizio visita con " + startNode);
         Queue<Integer> queue = new LinkedList<Integer>();
@@ -97,24 +96,11 @@ public class GrafoOrientato implements Grafo {
         }
         return visita;
     }
+    */
 
-    public List<Integer> visitaProfondita(int startNode) {
-        LinkedList<Integer> visita = new LinkedList<Integer>();
-        Stack<Integer> stack = new Stack<Integer>();
-        boolean[] visited = new boolean[adjacencyList.size()];
-        stack.push(startNode);
-        while (!stack.isEmpty()) {
-            int current = stack.pop();
-            visita.add(current);
-            visited[current] = true;
-            ArrayList<Integer> lista = adjacencyList.get(current);
-            for (Integer node : lista) {
-                if (!visited[node]) {
-                    stack.push(node);
-                }
-            }
-        }
-        return visita;
+    @Override
+    public int numNodi() {
+        return adjacencyList.size();
     }
 
 }

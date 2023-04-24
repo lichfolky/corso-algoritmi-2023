@@ -19,6 +19,9 @@ In caso di necessità potete contattarmi qui: [mattia.folcarelli@gmail.com](mail
 - 2023-04-18 - **[Alberi linkati d-ari e con k-figli](2023-04-18.md)**
 - 2023-04-19 - **[Alberi di riceca e algoritmi Greedy](2023-04-19.md)**
 - 2023-04-20 - **[UnionFind e HashMaps](2023-04-20.md)**
+- 2023-04-21 - **[Grafi 1](2023-04-21.md)**
+
+- 2023-04-24 - **[Grafi 2](2023-04-24.md)**
 
 ## Studenti
 
